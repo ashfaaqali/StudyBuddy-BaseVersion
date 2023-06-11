@@ -39,8 +39,8 @@
         <!-- Send Message Button -->
         <Button
             android:id="@+id/send_message_button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
