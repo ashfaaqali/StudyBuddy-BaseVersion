@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2"
+        android:padding="5dp"
+        android:background="@color/primaryColor">
+        <TextView
+            android:id="@+id/name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Hi, "
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Second LinearLayout for the remaining elements -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Night Mode Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/night_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:text="Night Mode" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/night_mode_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/night_mode"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <!-- Share Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/share_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share App"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:drawablePadding="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/share_app_drawable"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/share"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <!-- About Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/about_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="About"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"/>
+            <ImageView
+                android:id="@+id/about_drawable"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:background="@drawable/expand"/>
+        </RelativeLayout>
+
+        <!-- Expanding Layout for About Detail -->
+        <LinearLayout
+            android:id="@+id/about_detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/about_detail_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="About detail text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Exit Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/exit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Exit"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"/>
+            <ImageView
+                android:id="@+id/exit_drawable"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:background="@drawable/exit"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
