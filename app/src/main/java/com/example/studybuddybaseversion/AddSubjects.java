@@ -1,27 +1,41 @@
 package com.example.studybuddybaseversion;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
+import com.example.studybuddybaseversion.ScheduleFragmentModels.NotificationReceiver;
+import com.google.android.material.timepicker.MaterialTimePicker;
+import com.google.android.material.timepicker.TimeFormat;
+
+import java.util.Calendar;
 
 public class AddSubjects extends AppCompatActivity {
     EditText SubjectName1, SubjectName2, SubjectName3, SubjectName4, SubjectName5;
     EditText RequiredAttendance1, RequiredAttendance2, RequiredAttendance3, RequiredAttendance4, RequiredAttendance5;
     Button Save;
-
+    ImageView SelectClassTime1;
     String day;
-
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
+    public  MaterialTimePicker materialTimePicker;
+    private Calendar calendar;
+    private AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,21 +50,90 @@ public class AddSubjects extends AppCompatActivity {
         RequiredAttendance3 = (EditText)findViewById(R.id.required_attendance3);
         RequiredAttendance4 = (EditText)findViewById(R.id.required_attendance4);
         RequiredAttendance5 = (EditText)findViewById(R.id.required_attendance5);
+        Save = (Button) findViewById(R.id.add_subjects);
+        SelectClassTime1 = (ImageView) findViewById(R.id.select_time1);
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         day = (String) bundle.get("day");
-        Save = (Button) findViewById(R.id.add_subjects);
-
-
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SaveToSharedPref();
+                SetReminder();
                 finish();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
+        CreateNotificationChannel();
+        SelectClassTime1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowTimePicker();
+            }
+        });
+    }
+
+    private void SetReminder() {
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, NotificationReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
+    private void ShowTimePicker() {
+        materialTimePicker = new MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(12)
+                .setMinute(0)
+                .setTitleText("Select Class Time")
+                .build();
+
+        materialTimePicker.show(getSupportFragmentManager(), "StudyBuddy");
+        materialTimePicker.addOnPositiveButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPreferences = getSharedPreferences("StudyBuddy", MODE_PRIVATE);
+                editor = sharedPreferences.edit();
+                String selectedTimePM;
+                String selectedTimeAM;
+                if (materialTimePicker.getHour() > 12){
+                    selectedTimePM = String.format("%02d", (materialTimePicker.getHour()-12))+" : "+String.format("%02d", materialTimePicker.getMinute())+" PM";
+                    editor.putString("ClassTime1", selectedTimePM);
+                    editor.apply();
+                    Toast.makeText(AddSubjects.this, selectedTimePM, Toast.LENGTH_SHORT).show();
+                } else {
+                    selectedTimeAM = materialTimePicker.getHour()+" : "  +  materialTimePicker.getMinute()+" AM";
+                    editor.putString("ClassTime1", selectedTimeAM);
+                    editor.apply();
+                    Toast.makeText(AddSubjects.this, selectedTimeAM, Toast.LENGTH_SHORT).show();
+                }
+
+                calendar = Calendar.getInstance();
+                calendar.set(Calendar.HOUR_OF_DAY, materialTimePicker.getHour());
+                calendar.set(Calendar.MINUTE, materialTimePicker.getMinute());
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
+
+
+            }
+        });
+    }
+
+    private void CreateNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "StudyBuddyReminderChannel";
+            String description = "Channel For Alarm Manager";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+
+            NotificationChannel notificationChannel = new NotificationChannel("StudyBuddy", name, importance);
+            notificationChannel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
     }
 
 //    private void RetrieveStoredValues() {
@@ -74,9 +157,7 @@ public class AddSubjects extends AppCompatActivity {
 
     private void SaveToSharedPref() {
         sharedPreferences = getSharedPreferences("StudyBuddy", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-//        RetrieveStoredValues();
+        editor = sharedPreferences.edit();
 
         String subName1 =  SubjectName1.getText().toString();
         String subName2 =  SubjectName2.getText().toString();

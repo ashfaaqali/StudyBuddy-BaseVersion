@@ -9,8 +9,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/message_input_layout"
-        android:padding="16dp" />
+        android:padding="10dp" />
 
+    <!-- EXAMPLES -->
+    <LinearLayout
+        android:id="@+id/examples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@drawable/primary_clr_strk"
+        android:padding="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXAMPLES"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Write Java code to find out factorial of 5"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explain quantum computing in simple terms"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Got any creative ideas for Major project of\nmy college?"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
     <!-- Message Input Layout -->
     <RelativeLayout
         android:id="@+id/message_input_layout"
@@ -28,7 +72,6 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/send_message_button"
-            android:layout_toLeftOf="@+id/send_message_button"
             android:background="@drawable/edit_text_bg"
             android:hint="Type your message..."
             android:inputType="text"

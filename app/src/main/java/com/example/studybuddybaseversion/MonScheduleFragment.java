@@ -40,16 +40,19 @@ public class MonScheduleFragment extends Fragment {
         return view;
     }
     private void DisplaySchedule() {
-        TextView SN1, SN2, SN3, SN4, SN5;
+        TextView SN1, SN2, SN3, SN4, SN5, ClassTime1;
         CardView C1, C2, C3, C4, C5;
         sharedPreferences = requireActivity().getApplicationContext().getSharedPreferences("StudyBuddy", Context.MODE_PRIVATE);
         if (sharedPreferences.contains("Mon S_N_1")) {
-            String storedValue = sharedPreferences.getString("Mon S_N_1", "");
-            if (!storedValue.isEmpty()){
+            String name = sharedPreferences.getString("Mon S_N_1", "");
+            if (!name.isEmpty()){
                 SN1 = view.findViewById(R.id.mon_s_name1);
                 C1 = view.findViewById(R.id.cv1);
                 C1.setVisibility(View.VISIBLE);
-                SN1.setText(storedValue);
+                SN1.setText(name);
+                ClassTime1 = view.findViewById(R.id.class_time1);
+                String time = sharedPreferences.getString("ClassTime1", "");
+                ClassTime1.setText(time);
             }
         }
         if (sharedPreferences.contains("Mon S_N_2")) {
