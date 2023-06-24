@@ -47,16 +47,32 @@
                         android:padding="10dp"
                         android:drawablePadding="10dp"
                         android:elevation="10dp"/>
-                        <ImageView
+
+                        <TextView
                             android:id="@+id/select_time1"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_toEndOf="@id/required_attendance1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/time"
-                            android:backgroundTint="@android:color/transparent"/>
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toEndOf="@id/required_attendance1"
+                            android:drawableEnd="@drawable/time"
+                            android:gravity="center"
+                            android:text="Select Time"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
+                    <TextView
+                        android:id="@+id/emptyTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textColor="#D40E00"
+                        android:visibility="gone"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -91,15 +107,20 @@
                             android:padding="10dp"
                             android:drawablePadding="10dp"
                             android:elevation="10dp"/>
-                        <ImageView
+                        <TextView
                             android:id="@+id/select_time2"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
                             android:layout_toEndOf="@id/required_attendance2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/time"
-                            android:backgroundTint="@android:color/transparent"/>
+                            android:layout_margin="10dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:drawableEnd="@drawable/time"
+                            android:gravity="center"
+                            android:text="Select Time"
+                            android:textColor="@color/black"/>
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -135,15 +156,20 @@
                             android:padding="10dp"
                             android:drawablePadding="10dp"
                             android:elevation="10dp"/>
-                        <ImageView
+                        <TextView
                             android:id="@+id/select_time3"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
                             android:layout_toEndOf="@id/required_attendance3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/time"
-                            android:backgroundTint="@android:color/transparent"/>
+                            android:layout_margin="10dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:drawableEnd="@drawable/time"
+                            android:gravity="center"
+                            android:text="Select Time"
+                            android:textColor="@color/black"/>
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -179,15 +205,20 @@
                             android:padding="10dp"
                             android:drawablePadding="10dp"
                             android:elevation="10dp"/>
-                        <ImageView
+                        <TextView
                             android:id="@+id/select_time4"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
                             android:layout_toEndOf="@id/required_attendance4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/time"
-                            android:backgroundTint="@android:color/transparent"/>
+                            android:layout_margin="10dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:drawableEnd="@drawable/time"
+                            android:gravity="center"
+                            android:text="Select Time"
+                            android:textColor="@color/black"/>
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -223,15 +254,20 @@
                             android:padding="10dp"
                             android:drawablePadding="10dp"
                             android:elevation="10dp"/>
-                        <ImageView
+                        <TextView
                             android:id="@+id/select_time5"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
                             android:layout_toEndOf="@id/required_attendance5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/time"
-                            android:backgroundTint="@android:color/transparent"/>
+                            android:layout_margin="10dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:drawableEnd="@drawable/time"
+                            android:gravity="center"
+                            android:text="Select Time"
+                            android:textColor="@color/black"/>
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

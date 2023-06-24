@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.main_view_pager);
 
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.home).setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.schedule).setText("Schedule"));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.assistant).setText("My Buddy"));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.more).setText("More"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);

@@ -19,12 +19,10 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new HomeFragment();
-            case 1:
                 return new ScheduleFragment();
-            case 2:
+            case 1:
                 return new MyBuddyFragment();
-            case 3:
+            case 2:
                 return new MoreFragment();
             default:
                 return null;

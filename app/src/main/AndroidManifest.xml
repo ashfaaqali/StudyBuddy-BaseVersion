@@ -17,13 +17,6 @@
         android:theme="@style/Theme.StudyBuddyBaseVersion"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <meta-data
@@ -50,7 +43,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <receiver android:name=".ScheduleFragmentModels.NotificationReceiver" />
     </application>
 
