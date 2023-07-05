@@ -50,46 +50,50 @@ public class TueScheduleFragment extends Fragment {
         view = inflater.inflate(R.layout.tue_schedule_fragment, null);
 
         //All text views for displaying information
-        TotalClasses1 = view.findViewById(R.id.total_classes_1); TotalClasses2 = view.findViewById(R.id.total_classes_2);
-        TotalClasses3 = view.findViewById(R.id.total_classes_3); TotalClasses4 = view.findViewById(R.id.total_classes_4);
-        TotalClasses5 = view.findViewById(R.id.total_classes_5);
-        PresentClasses1 = view.findViewById(R.id.present_classes_1); PresentClasses2 = view.findViewById(R.id.present_classes_2);
-        PresentClasses3 = view.findViewById(R.id.present_classes_3);PresentClasses4 = view.findViewById(R.id.present_classes_4);
-        PresentClasses5 = view.findViewById(R.id.present_classes_5);
-        AbsentClasses1 = view.findViewById(R.id.absent_classes_1); AbsentClasses2 = view.findViewById(R.id.absent_classes_2);
-        AbsentClasses3 = view.findViewById(R.id.absent_classes_3); AbsentClasses4 = view.findViewById(R.id.absent_classes_4);
-        AbsentClasses5 = view.findViewById(R.id.absent_classes_5);
-        CancelledClasses1 = view.findViewById(R.id.cancelled_classes_1); CancelledClasses2 = view.findViewById(R.id.cancelled_classes_2);
-        CancelledClasses3 = view.findViewById(R.id.cancelled_classes_3); CancelledClasses4 = view.findViewById(R.id.cancelled_classes_4);
-        CancelledClasses5 = view.findViewById(R.id.cancelled_classes_5);
-        CurrentPercentage1 = view.findViewById(R.id.current_percentage_1); CurrentPercentage2 = view.findViewById(R.id.current_percentage_2);
-        CurrentPercentage3 = view.findViewById(R.id.current_percentage_3); CurrentPercentage4 = view.findViewById(R.id.current_percentage_4);
-        CurrentPercentage5 = view.findViewById(R.id.current_percentage_5);
+        requireActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TotalClasses1 = view.findViewById(R.id.total_classes_1); TotalClasses2 = view.findViewById(R.id.total_classes_2);
+                TotalClasses3 = view.findViewById(R.id.total_classes_3); TotalClasses4 = view.findViewById(R.id.total_classes_4);
+                TotalClasses5 = view.findViewById(R.id.total_classes_5);
+                PresentClasses1 = view.findViewById(R.id.present_classes_1); PresentClasses2 = view.findViewById(R.id.present_classes_2);
+                PresentClasses3 = view.findViewById(R.id.present_classes_3);PresentClasses4 = view.findViewById(R.id.present_classes_4);
+                PresentClasses5 = view.findViewById(R.id.present_classes_5);
+                AbsentClasses1 = view.findViewById(R.id.absent_classes_1); AbsentClasses2 = view.findViewById(R.id.absent_classes_2);
+                AbsentClasses3 = view.findViewById(R.id.absent_classes_3); AbsentClasses4 = view.findViewById(R.id.absent_classes_4);
+                AbsentClasses5 = view.findViewById(R.id.absent_classes_5);
+                CancelledClasses1 = view.findViewById(R.id.cancelled_classes_1); CancelledClasses2 = view.findViewById(R.id.cancelled_classes_2);
+                CancelledClasses3 = view.findViewById(R.id.cancelled_classes_3); CancelledClasses4 = view.findViewById(R.id.cancelled_classes_4);
+                CancelledClasses5 = view.findViewById(R.id.cancelled_classes_5);
+                CurrentPercentage1 = view.findViewById(R.id.current_percentage_1); CurrentPercentage2 = view.findViewById(R.id.current_percentage_2);
+                CurrentPercentage3 = view.findViewById(R.id.current_percentage_3); CurrentPercentage4 = view.findViewById(R.id.current_percentage_4);
+                CurrentPercentage5 = view.findViewById(R.id.current_percentage_5);
 
-        //Card Views for visibility setting
-        CV1 = (CardView) view.findViewById(R.id.cv1); CV2 = (CardView) view.findViewById(R.id.cv2); CV3 = (CardView) view.findViewById(R.id.cv3);
-        CV4 = (CardView) view.findViewById(R.id.cv4);CV5 = (CardView) view.findViewById(R.id.cv5);
+                //Card Views for visibility setting
+                CV1 = (CardView) view.findViewById(R.id.cv1); CV2 = (CardView) view.findViewById(R.id.cv2); CV3 = (CardView) view.findViewById(R.id.cv3);
+                CV4 = (CardView) view.findViewById(R.id.cv4);CV5 = (CardView) view.findViewById(R.id.cv5);
 
-        //Linear layouts to expand
-        LinearLayout1 = (LinearLayout) view.findViewById(R.id.expandable_layout1);
-        LinearLayout2 = (LinearLayout) view.findViewById(R.id.expandable_layout2);
-        LinearLayout3 = (LinearLayout) view.findViewById(R.id.expandable_layout3);
-        LinearLayout4 = (LinearLayout) view.findViewById(R.id.expandable_layout4);
-        LinearLayout5 = (LinearLayout) view.findViewById(R.id.expandable_layout5);
+                //Linear layouts to expand
+                LinearLayout1 = (LinearLayout) view.findViewById(R.id.expandable_layout1);
+                LinearLayout2 = (LinearLayout) view.findViewById(R.id.expandable_layout2);
+                LinearLayout3 = (LinearLayout) view.findViewById(R.id.expandable_layout3);
+                LinearLayout4 = (LinearLayout) view.findViewById(R.id.expandable_layout4);
+                LinearLayout5 = (LinearLayout) view.findViewById(R.id.expandable_layout5);
 
-        //Counter Buttons
-        PresentBtn1 = (Button) view.findViewById(R.id.present_button1); PresentBtn2 = (Button) view.findViewById(R.id.present_button2);
-        PresentBtn3 = (Button) view.findViewById(R.id.present_button3); PresentBtn4 = (Button) view.findViewById(R.id.present_button4);
-        PresentBtn5 = (Button) view.findViewById(R.id.present_button5);
-        AbsentBtn1 = (Button) view.findViewById(R.id.absent_button1); AbsentBtn2 = (Button) view.findViewById(R.id.absent_button2);
-        AbsentBtn3 = (Button) view.findViewById(R.id.absent_button3);AbsentBtn4 = (Button) view.findViewById(R.id.absent_button4);
-        AbsentBtn5 = (Button) view.findViewById(R.id.absent_button5);
-        CancelledBtn1 = (Button) view.findViewById(R.id.cancelled_button1); CancelledBtn2 = (Button) view.findViewById(R.id.cancelled_button2);
-        CancelledBtn3 = (Button) view.findViewById(R.id.cancelled_button3);CancelledBtn4 = (Button) view.findViewById(R.id.cancelled_button4);
-        CancelledBtn5 = (Button) view.findViewById(R.id.cancelled_button5);
+                //Counter Buttons
+                PresentBtn1 = (Button) view.findViewById(R.id.present_button1); PresentBtn2 = (Button) view.findViewById(R.id.present_button2);
+                PresentBtn3 = (Button) view.findViewById(R.id.present_button3); PresentBtn4 = (Button) view.findViewById(R.id.present_button4);
+                PresentBtn5 = (Button) view.findViewById(R.id.present_button5);
+                AbsentBtn1 = (Button) view.findViewById(R.id.absent_button1); AbsentBtn2 = (Button) view.findViewById(R.id.absent_button2);
+                AbsentBtn3 = (Button) view.findViewById(R.id.absent_button3);AbsentBtn4 = (Button) view.findViewById(R.id.absent_button4);
+                AbsentBtn5 = (Button) view.findViewById(R.id.absent_button5);
+                CancelledBtn1 = (Button) view.findViewById(R.id.cancelled_button1); CancelledBtn2 = (Button) view.findViewById(R.id.cancelled_button2);
+                CancelledBtn3 = (Button) view.findViewById(R.id.cancelled_button3);CancelledBtn4 = (Button) view.findViewById(R.id.cancelled_button4);
+                CancelledBtn5 = (Button) view.findViewById(R.id.cancelled_button5);
 
-        AddButton = (FloatingActionButton) view.findViewById(R.id.add_subjects);
-
+                AddButton = (FloatingActionButton) view.findViewById(R.id.add_subjects);
+            }
+        });
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

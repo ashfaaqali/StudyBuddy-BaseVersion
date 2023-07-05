@@ -31,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-                viewPagerAdapter.notifyDataSetChanged();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        viewPager.setCurrentItem(tab.getPosition());
+                        viewPagerAdapter.notifyDataSetChanged();
+                    }
+                });
             }
 
             @Override

@@ -38,10 +38,14 @@ public class ScheduleFragment extends Fragment {
         createScheduleTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                createScheduleViewPager.setCurrentItem(tab.getPosition());
-                scheduleViewPagerAdapter.notifyDataSetChanged();
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        createScheduleViewPager.setCurrentItem(tab.getPosition());
+                        scheduleViewPagerAdapter.notifyDataSetChanged();
+                    }
+                });
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
