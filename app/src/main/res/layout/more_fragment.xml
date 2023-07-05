@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
+            android:text="Hi, Azhan"
             android:textColor="@color/white"
             android:layout_margin="5dp"
             android:textSize="24sp"
@@ -127,20 +128,24 @@
 
         <!-- Exit Button -->
         <RelativeLayout
+            android:id="@+id/exit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp">
+
             <TextView
-                android:id="@+id/exit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 android:text="Exit"
                 android:textColor="#FF0000"
-                android:textStyle="bold"
                 android:textSize="16sp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"/>
+                android:textStyle="bold" />
             <ImageView
                 android:id="@+id/exit_drawable"
                 android:layout_width="25dp"

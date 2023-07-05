@@ -100,6 +100,9 @@ public class MyBuddyFragment extends Fragment {
             jsonObject.put("max_tokens", 4000);
             jsonObject.put("prompt", question);
             jsonObject.put("temperature", 0);
+            jsonObject.put("n", 1);
+            jsonObject.put("stream", false);
+            jsonObject.put("logprobs", null);
         } catch (JSONException e) {
             e.printStackTrace();
         }
