@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -65,11 +66,12 @@ public class MyBuddyFragment extends Fragment {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String question = messageEditText.getText().toString().trim();
-                AddToChat(question, Message.SENT_BY_ME);
-                messageEditText.setText("");
-                CallAPI(question);
-                examples.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "This feature will be released in the next update", Toast.LENGTH_SHORT).show();
+//                String question = messageEditText.getText().toString().trim();
+//                AddToChat(question, Message.SENT_BY_ME);
+//                messageEditText.setText("");
+//                CallAPI(question);
+//                examples.setVisibility(View.GONE);
             }
         });
         return v;

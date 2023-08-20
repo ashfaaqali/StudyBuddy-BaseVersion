@@ -1,52 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <LinearLayout
             android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <EditText
                         android:id="@+id/subject_name1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
-                        android:background="@drawable/edit_text_bg"
                         android:layout_margin="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:elevation="10dp"
+                        android:hint="Subject Name"
                         android:padding="10dp"
-                        android:elevation="10dp"/>
+                        android:textColorHint="@color/grey" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/required_attendance1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:hint="Required Attendance"
-                        android:background="@drawable/edit_text_bg"
-                        android:drawableEnd="@drawable/percent"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        android:drawablePadding="10dp"
-                        android:elevation="10dp"/>
+
+                        <EditText
+                            android:id="@+id/required_attendance1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:drawableEnd="@drawable/percent"
+                            android:drawablePadding="10dp"
+                            android:elevation="10dp"
+                            android:hint="Required Attendance"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="@color/grey" />
 
                         <TextView
                             android:id="@+id/select_time1"
@@ -62,212 +72,255 @@
                             android:drawableEnd="@drawable/time"
                             android:gravity="center"
                             android:text="Select Time"
-                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
+
                     <TextView
                         android:id="@+id/emptyTime1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:textColor="#D40E00"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <EditText
                         android:id="@+id/subject_name2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
-                        android:background="@drawable/edit_text_bg"
                         android:layout_margin="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:elevation="10dp"
+                        android:hint="Subject Name"
                         android:padding="10dp"
-                        android:elevation="10dp"/>
+                        android:textColorHint="@color/grey" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <EditText
                             android:id="@+id/required_attendance2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:hint="Required Attendance"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
                             android:background="@drawable/edit_text_bg"
                             android:drawableEnd="@drawable/percent"
-                            android:layout_margin="10dp"
-                            android:padding="10dp"
                             android:drawablePadding="10dp"
-                            android:elevation="10dp"/>
+                            android:elevation="10dp"
+                            android:hint="Required Attendance"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="@color/grey" />
+
                         <TextView
                             android:id="@+id/select_time2"
-                            android:layout_toEndOf="@id/required_attendance2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:layout_margin="10dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toEndOf="@id/required_attendance2"
                             android:drawableEnd="@drawable/time"
                             android:gravity="center"
                             android:text="Select Time"
-                            android:textColor="@color/black"/>
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <EditText
                         android:id="@+id/subject_name3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
-                        android:background="@drawable/edit_text_bg"
                         android:layout_margin="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:elevation="10dp"
+                        android:hint="Subject Name"
                         android:padding="10dp"
-                        android:elevation="10dp"/>
+                        android:textColorHint="@color/grey" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <EditText
                             android:id="@+id/required_attendance3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:hint="Required Attendance"
+                            android:layout_margin="10dp"
                             android:background="@drawable/edit_text_bg"
                             android:drawableEnd="@drawable/percent"
-                            android:layout_margin="10dp"
-                            android:padding="10dp"
                             android:drawablePadding="10dp"
-                            android:elevation="10dp"/>
+                            android:elevation="10dp"
+                            android:hint="Required Attendance"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="@color/grey" />
+
                         <TextView
                             android:id="@+id/select_time3"
-                            android:layout_toEndOf="@id/required_attendance3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:layout_margin="10dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toEndOf="@id/required_attendance3"
                             android:drawableEnd="@drawable/time"
                             android:gravity="center"
                             android:text="Select Time"
-                            android:textColor="@color/black"/>
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <EditText
                         android:id="@+id/subject_name4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
-                        android:background="@drawable/edit_text_bg"
                         android:layout_margin="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:elevation="10dp"
+                        android:hint="Subject Name"
                         android:padding="10dp"
-                        android:elevation="10dp"/>
+                        android:textColorHint="@color/grey" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <EditText
                             android:id="@+id/required_attendance4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:hint="Required Attendance"
+                            android:layout_margin="10dp"
                             android:background="@drawable/edit_text_bg"
                             android:drawableEnd="@drawable/percent"
-                            android:layout_margin="10dp"
-                            android:padding="10dp"
                             android:drawablePadding="10dp"
-                            android:elevation="10dp"/>
+                            android:elevation="10dp"
+                            android:hint="Required Attendance"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="@color/grey" />
+
                         <TextView
                             android:id="@+id/select_time4"
-                            android:layout_toEndOf="@id/required_attendance4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:layout_margin="10dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toEndOf="@id/required_attendance4"
                             android:drawableEnd="@drawable/time"
                             android:gravity="center"
                             android:text="Select Time"
-                            android:textColor="@color/black"/>
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <EditText
                         android:id="@+id/subject_name5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
-                        android:background="@drawable/edit_text_bg"
                         android:layout_margin="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:elevation="10dp"
+                        android:hint="Subject Name"
                         android:padding="10dp"
-                        android:elevation="10dp"/>
+                        android:textColorHint="@color/grey" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <EditText
                             android:id="@+id/required_attendance5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:hint="Required Attendance"
+                            android:layout_margin="10dp"
                             android:background="@drawable/edit_text_bg"
                             android:drawableEnd="@drawable/percent"
-                            android:layout_margin="10dp"
-                            android:padding="10dp"
                             android:drawablePadding="10dp"
-                            android:elevation="10dp"/>
+                            android:elevation="10dp"
+                            android:hint="Required Attendance"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="@color/grey" />
+
                         <TextView
                             android:id="@+id/select_time5"
-                            android:layout_toEndOf="@id/required_attendance5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
-                            android:layout_margin="10dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toEndOf="@id/required_attendance5"
                             android:drawableEnd="@drawable/time"
                             android:gravity="center"
                             android:text="Select Time"
-                            android:textColor="@color/black"/>
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -278,12 +331,12 @@
         android:id="@+id/add_subjects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:background="@drawable/button"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/button" />
+        android:text="Save"
+        app:backgroundTint="@null" />
 
 </LinearLayout>

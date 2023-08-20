@@ -30,7 +30,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello!"
-            android:textColor="@color/black"
             android:textSize="40sp"
             android:textStyle="bold"
             android:padding="10dp"
@@ -40,8 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome to StudyBuddy"
             android:padding="10dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textSize="20sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,14 +47,14 @@
             android:text="Tell us your name"
             android:textStyle="bold"
             android:padding="10dp"
-            android:textSize="18sp"
-            android:textColor="#000000"/>
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/name_edit_text"
             android:layout_width="200dp"
             android:layout_height="45dp"
             android:background="@drawable/edit_text_bg"
+            android:textColor="@color/black"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:padding="10dp"
