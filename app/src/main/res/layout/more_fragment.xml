@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
-            android:text="Hi, Azhan"
+            android:text="Hi, SparklingMind"
             android:textColor="@color/white"
             android:layout_margin="5dp"
             android:textSize="24sp"
@@ -33,8 +33,7 @@
         <!-- Night Mode Button -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/night_mode"
@@ -48,32 +47,46 @@
                 android:layout_marginBottom="5dp"
                 android:text="Night Mode"
                 android:textSize="16sp"/>
-sp            <androidx.appcompat.widget.SwitchCompat
+
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/night_mode_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/night_mode"
-                android:layout_margin="5dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:textSize="16sp" />
+            <TextView
+                android:layout_below="@id/night_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="*Using system theme"
+                android:textSize="12sp"
+                android:textColor="#F44336"/>
         </RelativeLayout>
 
         <!-- Share Button -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/share_app"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Share App"
-                android:layout_margin="5dp"
-                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:drawablePadding="8dp"
                 android:paddingTop="16dp"
-                android:paddingBottom="16dp" />
+                android:paddingBottom="16dp"
+                android:text="Share App"
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/share_app_drawable"
@@ -89,14 +102,16 @@ sp            <androidx.appcompat.widget.SwitchCompat
         <!-- About Button -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/about_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="About"
@@ -107,37 +122,29 @@ sp            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_margin="5dp"
+                android:layout_marginStart="291dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/expand"
                 android:textSize="16sp" />
         </RelativeLayout>
 
         <!-- Expanding Layout for About Detail -->
-        <LinearLayout
-            android:id="@+id/about_detail_layout"
+        <TextView
+            android:id="@+id/about_detail_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginStart="5dp"
             android:visibility="gone"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:padding="5dp">
-            <TextView
-                android:id="@+id/about_detail_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="About detail text"
-                android:textSize="16sp" />
-        </LinearLayout>
+            android:text="@string/about"
+            android:textSize="16sp" />
 
         <!-- Exit Button -->
         <RelativeLayout
             android:id="@+id/exit_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -152,15 +159,19 @@ sp            <androidx.appcompat.widget.SwitchCompat
                 android:textColor="#FF0000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/exit_drawable"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_margin="5dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:textSize="16sp"
-                android:background="@drawable/exit"/>
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/exit"
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </LinearLayout>

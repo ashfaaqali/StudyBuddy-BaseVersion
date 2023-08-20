@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Study Buddy (Base Version)</string>
+    <string name="about">Study Buddy is an innovative Android app designed to optimize your studying experience. It offers seamless subject management, daily fragments for easy scheduling, and an AI-powered chatbot for interactive learning with instant responses. Stay organized and never miss a class with proactive notifications.</string>
 </resources>
