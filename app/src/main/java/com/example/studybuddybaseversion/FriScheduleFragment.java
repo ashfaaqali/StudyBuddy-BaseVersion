@@ -2,7 +2,6 @@ package com.example.studybuddybaseversion;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -70,28 +69,28 @@ public class FriScheduleFragment extends Fragment {
                 CurrentPercentage5 = view.findViewById(R.id.current_percentage_5);
 
                 //Card Views for visibility setting
-                CV1 = (CardView) view.findViewById(R.id.cv1); CV2 = (CardView) view.findViewById(R.id.cv2); CV3 = (CardView) view.findViewById(R.id.cv3);
-                CV4 = (CardView) view.findViewById(R.id.cv4);CV5 = (CardView) view.findViewById(R.id.cv5);
+                CV1 = view.findViewById(R.id.cv1); CV2 = (CardView) view.findViewById(R.id.cv2); CV3 = (CardView) view.findViewById(R.id.cv3);
+                CV4 = view.findViewById(R.id.cv4);CV5 = (CardView) view.findViewById(R.id.cv5);
 
                 //Linear layouts to expand
-                LinearLayout1 = (LinearLayout) view.findViewById(R.id.expandable_layout1);
-                LinearLayout2 = (LinearLayout) view.findViewById(R.id.expandable_layout2);
-                LinearLayout3 = (LinearLayout) view.findViewById(R.id.expandable_layout3);
-                LinearLayout4 = (LinearLayout) view.findViewById(R.id.expandable_layout4);
-                LinearLayout5 = (LinearLayout) view.findViewById(R.id.expandable_layout5);
+                LinearLayout1 = view.findViewById(R.id.expandable_layout1);
+                LinearLayout2 = view.findViewById(R.id.expandable_layout2);
+                LinearLayout3 = view.findViewById(R.id.expandable_layout3);
+                LinearLayout4 = view.findViewById(R.id.expandable_layout4);
+                LinearLayout5 = view.findViewById(R.id.expandable_layout5);
 
                 //Counter Buttons
-                PresentBtn1 = (Button) view.findViewById(R.id.present_button1); PresentBtn2 = (Button) view.findViewById(R.id.present_button2);
-                PresentBtn3 = (Button) view.findViewById(R.id.present_button3); PresentBtn4 = (Button) view.findViewById(R.id.present_button4);
-                PresentBtn5 = (Button) view.findViewById(R.id.present_button5);
-                AbsentBtn1 = (Button) view.findViewById(R.id.absent_button1); AbsentBtn2 = (Button) view.findViewById(R.id.absent_button2);
-                AbsentBtn3 = (Button) view.findViewById(R.id.absent_button3);AbsentBtn4 = (Button) view.findViewById(R.id.absent_button4);
-                AbsentBtn5 = (Button) view.findViewById(R.id.absent_button5);
-                CancelledBtn1 = (Button) view.findViewById(R.id.cancelled_button1); CancelledBtn2 = (Button) view.findViewById(R.id.cancelled_button2);
-                CancelledBtn3 = (Button) view.findViewById(R.id.cancelled_button3);CancelledBtn4 = (Button) view.findViewById(R.id.cancelled_button4);
-                CancelledBtn5 = (Button) view.findViewById(R.id.cancelled_button5);
+                PresentBtn1 = view.findViewById(R.id.present_button1); PresentBtn2 = view.findViewById(R.id.present_button2);
+                PresentBtn3 = view.findViewById(R.id.present_button3); PresentBtn4 = view.findViewById(R.id.present_button4);
+                PresentBtn5 = view.findViewById(R.id.present_button5);
+                AbsentBtn1 = view.findViewById(R.id.absent_button1); AbsentBtn2 = view.findViewById(R.id.absent_button2);
+                AbsentBtn3 = view.findViewById(R.id.absent_button3);AbsentBtn4 = view.findViewById(R.id.absent_button4);
+                AbsentBtn5 = view.findViewById(R.id.absent_button5);
+                CancelledBtn1 = view.findViewById(R.id.cancelled_button1); CancelledBtn2 = view.findViewById(R.id.cancelled_button2);
+                CancelledBtn3 = view.findViewById(R.id.cancelled_button3);CancelledBtn4 = view.findViewById(R.id.cancelled_button4);
+                CancelledBtn5 = view.findViewById(R.id.cancelled_button5);
 
-                AddButton = (FloatingActionButton) view.findViewById(R.id.add_subjects);
+                AddButton = view.findViewById(R.id.add_subjects);
             }
         });
 
@@ -172,6 +171,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Present Count 5", presentCount5);
                                 editor.apply();
                                 Toast.makeText(getContext(), "presence recorded in "+s5, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -199,6 +199,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Absent Count 5", absentCount5);
                                 editor.apply();
                                 Toast.makeText(getContext(), "absence recorded in "+s5, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -226,6 +227,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Cancel Count 5", cancelledCount5);
                                 editor.apply();
                                 Toast.makeText(getContext(), "cancellation recorded in "+s5, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -266,6 +268,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Present Count 4", presentCount4);
                                 editor.apply();
                                 Toast.makeText(getContext(), "presence recorded in "+s4, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -293,6 +296,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Absent Count 4", absentCount4);
                                 editor.apply();
                                 Toast.makeText(getContext(), "absence recorded in "+s4, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -320,6 +324,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Cancel Count 4", cancelledCount4);
                                 editor.apply();
                                 Toast.makeText(getContext(), "cancellation recorded in "+s4, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -360,6 +365,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Present Count 3", presentCount3);
                                 editor.apply();
                                 Toast.makeText(getContext(), "presence recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -387,6 +393,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Absent Count 3", absentCount3);
                                 editor.apply();
                                 Toast.makeText(getContext(), "absence recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -414,6 +421,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Cancel Count 3", cancelledCount3);
                                 editor.apply();
                                 Toast.makeText(getContext(), "cancellation recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -453,6 +461,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Present Count 2", presentCount2);
                                 editor.apply();
                                 Toast.makeText(getContext(), "presence recorded in "+s2, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -480,6 +489,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Absent Count 2", absentCount2);
                                 editor.apply();
                                 Toast.makeText(getContext(), "absence recorded in "+s2, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -507,6 +517,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Cancel Count 2", cancelledCount2);
                                 editor.apply();
                                 Toast.makeText(getContext(), "cancellation recorded in "+s2, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -547,6 +558,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Present Count 1", presentCount1);
                                 editor.apply();
                                 Toast.makeText(getContext(), "presence recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -574,6 +586,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Absent Count 1", absentCount1);
                                 editor.apply();
                                 Toast.makeText(getContext(), "absence recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -601,6 +614,7 @@ public class FriScheduleFragment extends Fragment {
                                 editor.putInt("Fri Cancel Count 1", cancelledCount1);
                                 editor.apply();
                                 Toast.makeText(getContext(), "cancellation recorded in "+s1, Toast.LENGTH_SHORT).show();
+                                requireActivity().recreate();
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -622,6 +636,8 @@ public class FriScheduleFragment extends Fragment {
         if (sharedPreferences.contains("Fri S_N_1")) {
             s1 = sharedPreferences.getString("Fri S_N_1", "");
             if (!s1.isEmpty()){
+                TextView CurrPerInstruction = view.findViewById(R.id.current_percentage_inst);
+                CurrPerInstruction.setVisibility(View.VISIBLE);
                 SN1 = view.findViewById(R.id.fri_s_name1);
                 C1 = view.findViewById(R.id.cv1);
                 C1.setVisibility(View.VISIBLE);

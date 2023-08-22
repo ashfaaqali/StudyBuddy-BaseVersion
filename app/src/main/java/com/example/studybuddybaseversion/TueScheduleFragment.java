@@ -621,6 +621,8 @@ public class TueScheduleFragment extends Fragment {
         if (sharedPreferences.contains("Tue S_N_1")) {
             s1 = sharedPreferences.getString("Tue S_N_1", "");
             if (!s1.isEmpty()){
+                TextView CurrPerInstruction = view.findViewById(R.id.current_percentage_inst);
+                CurrPerInstruction.setVisibility(View.VISIBLE);
                 SN1 = view.findViewById(R.id.tue_s_name1);
                 C1 = view.findViewById(R.id.cv1);
                 C1.setVisibility(View.VISIBLE);

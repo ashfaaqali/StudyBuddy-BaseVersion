@@ -2,7 +2,6 @@ package com.example.studybuddybaseversion;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -621,6 +620,8 @@ public class MonScheduleFragment extends Fragment {
         if (sharedPreferences.contains("Mon S_N_1")) {
             s1 = sharedPreferences.getString("Mon S_N_1", "");
             if (!s1.isEmpty()){
+                TextView CurrPerInstruction = view.findViewById(R.id.current_percentage_inst);
+                CurrPerInstruction.setVisibility(View.VISIBLE);
                 SN1 = view.findViewById(R.id.mon_s_name1);
                 C1 = view.findViewById(R.id.cv1);
                 C1.setVisibility(View.VISIBLE);
