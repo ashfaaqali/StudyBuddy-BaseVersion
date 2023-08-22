@@ -18,21 +18,21 @@
         tools:targetApi="tiramisu"
         android:hardwareAccelerated="true">
         <activity
-            android:name=".MainActivity"
+            android:name="com.app.studybuddybaseversion.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddSubjects"
+            android:name="com.app.studybuddybaseversion.AddSubjects"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name="com.app.studybuddybaseversion.SplashScreen"
             android:exported="true"
             android:noHistory="true">
             <intent-filter>
@@ -45,7 +45,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <receiver android:name=".ScheduleFragmentModels.NotificationReceiver" />
+        <receiver android:name="com.app.studybuddybaseversion.ScheduleFragmentModels.NotificationReceiver" />
     </application>
 
 </manifest>

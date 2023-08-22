@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.studybuddybaseversion'
+    namespace 'com.app.studybuddybaseversion'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.studybuddybaseversion"
+        applicationId "com.app.studybuddybaseversion"
         minSdk 23
         targetSdk 33
         versionCode 1
